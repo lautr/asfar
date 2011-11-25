@@ -109,7 +109,7 @@
 			location.href = location.hash.substring(2);
 		}
 	
-		html5AjaxHistoryO = new html5AjaxHistoryC();
+		var html5AjaxHistoryO = new html5AjaxHistoryC();
 
 		if ((typeof(arguments[0]) !== 'undefined')) {
 			if((typeof(arguments[0]['before']) !== 'undefined')){
@@ -135,7 +135,7 @@
 			var selector = arguments[0]['selector'];
 		}
 						
-		target = $(this).selector; //this;
+		var target = $(this).selector; //this;
 		
 		$(selector).live('click',function (event) {
 			event.preventDefault();
