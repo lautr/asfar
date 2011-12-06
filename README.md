@@ -18,17 +18,6 @@ Effetcs using Callbacks: [http://www.lautr.com/asfar/example-plain/index.html](h
 
 Complete page as ajax response (no server partial response): [http://www.lautr.com/asfar/example-complete-response/start.html](http://www.lautr.com/asfar/example-complete-response/start.html
 
-##implementation & examples
-###basic
-<pre>
-	$('#content').asfar();
-</pre>
-
-=======
-##about
-
-##demos
-
 ##implementation & Examples
 ###basic
 <pre>
