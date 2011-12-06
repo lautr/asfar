@@ -1,8 +1,10 @@
 (function ($) {
 	"use strict";
 	
-	function html5AjaxHistoryC(callback, selector) {
+	function html5AjaxHistoryC(target, selector) {
 		var hash = location.hash,
+			target = target,
+			selector = selector,
 			pagecount = 0,
 			before,
 			insert,
@@ -103,13 +105,20 @@
 	}
 	
 	$.fn.asfar = function () {
-
 		// place this in your header to optimize performance
 		if ('#!' === location.hash.substring(0,2)) {
 			location.href = location.hash.substring(2);
 		}
+		
+		if( (typeof(arguments[0]) === 'undefined') || (typeof(arguments[0]['selector']) === 'undefined')){
+			var selector = 'a[href*="' + document.location.host + '"], a[href^="/"], a:not([href^="http://"])';
+		}else{
+			var selector = arguments[0]['selector'];
+		}
+						
+		var target = $(this).selector; //this;
 	
-		var html5AjaxHistoryO = new html5AjaxHistoryC();
+		var html5AjaxHistoryO = new html5AjaxHistoryC(target,selector);
 
 		if ((typeof(arguments[0]) !== 'undefined')) {
 			if((typeof(arguments[0]['before']) !== 'undefined')){
@@ -129,13 +138,7 @@
 			}
 		}
 	
-		if( (typeof(arguments[0]) === 'undefined') || (typeof(arguments[0]['selector']) === 'undefined')){
-			var selector = 'a[href*="' + document.location.host + '"], a[href^="/"]';
-		}else{
-			var selector = arguments[0]['selector'];
-		}
-						
-		var target = $(this).selector; //this;
+	
 		
 		$(selector).live('click',function (event) {
 			event.preventDefault();
