@@ -16,7 +16,7 @@ Plain: [http://www.lautr.com/asfar/example-plain/index.html](http://www.lautr.co
 
 Effetcs using Callbacks: [http://www.lautr.com/asfar/example-plain/index.html](http://www.lautr.com/asfar/example-plain/index.html)
 
-Complete page as ajax response - no server partial response: [http://www.lautr.com/asfar/example-complete-response/start.html](http://www.lautr.com/asfar/example-complete-response/start.html
+Complete page as ajax response - no server partial response: [http://www.lautr.com/asfar/example-complete-response/start.html](http://www.lautr.com/asfar/example-complete-response/start.html)
 
 ##implementation & Examples
 ###basic
