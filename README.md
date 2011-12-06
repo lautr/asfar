@@ -24,6 +24,17 @@ Complete page as ajax response (no server partial response): [http://www.lautr.c
 	$('#content').asfar();
 </pre>
 
+=======
+##about
+
+##demos
+
+##implementation & Examples
+###basic
+<pre>
+	$('#content').asfar();
+</pre>
+
 ###selector
 <pre>
 	$('#content').asfar({
