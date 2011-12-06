@@ -47,6 +47,8 @@
 
 ### Server Side
 
+You can optimize your application to only return the part of the page that you actually want to load, you can do that by recognizing an "ajax" call and devlivering different content depending on that.
+
 #### Zend Framework Example
 <pre>
 	class IndexController extends Zend_Controller_Action
@@ -87,5 +89,12 @@
 </pre>
 
 ### Client Side
+
+You can place this peace of javascript Code in the header of your page so he can perform redirects without loading & showing the whole (wrong) page first
+<pre>
+		if ('#!' === location.hash.substring(0,2)) {
+			location.href = location.hash.substring(2);
+		}
+</pre>
 
 
