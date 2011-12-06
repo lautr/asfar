@@ -47,7 +47,7 @@
 
 ### Server Side
 
-You can optimize your application to only return the part of the page that you actually want to load, you can do that by recognizing an "ajax" call and devlivering different content depending on that.
+You can optimize your application to only return the part of the page that you actually want to load, you can do that by recognizing an "ajax" call and devlivering different content depending on that. Here are some examples how to do that in some PHP Enviroments:
 
 #### Zend Framework Example
 <pre>
