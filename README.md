@@ -12,9 +12,9 @@ If your Browser does not support the HMLT5 History Interface (yes IE Users, I'm 
 
 ##demos
 
-Plain: [http://www.lautr.com/asfar/example-plain/index.html](http://www.lautr.com/asfar/example-plain/index.html)
+Plain: [http://www.lautr.com/asfar/example-plain/index.php](http://www.lautr.com/asfar/example-plain/index.php)
 
-Effetcs using Callbacks: [http://www.lautr.com/asfar/example-plain/index.html](http://www.lautr.com/asfar/example-plain/index.html)
+Effetcs using Callbacks: [http://www.lautr.com/asfar/example-plain/index.php](http://www.lautr.com/asfar/example-plain/index.php)
 
 Complete page as ajax response - no server partial response: [http://www.lautr.com/asfar/example-complete-response/start.html](http://www.lautr.com/asfar/example-complete-response/start.html)
 
