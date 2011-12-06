@@ -7,7 +7,7 @@
 ##implementation & Examples
 ###basic
 <pre>
-  $('#content').asfar();
+	$('#content').asfar();
 </pre>
 
 ###selector
@@ -19,7 +19,7 @@
 
 ###callbacks
 <pre>
-  $('#content').asfar({
+	$('#content').asfar({
         selector : 'a:not(.extern)',
         before : function(urlFragment,target){
             console.log('before');
@@ -34,13 +34,13 @@
             console.log('after');
         },
         success : function(urlFragment,target){
-            if(0 < $('a[href="' + urlFragment + '"]').length){
+            if(0 &gt; $('a[href="' + urlFragment + '"]').length){
                 $('a').removeClass('active');
                 $('a[href="' + urlFragment + '"]').addClass('active');
             }
             _gaq.push(['_trackPageview',urlFragment]);
         }
-    });
+	});
 </pre>
 
 ##optimization
