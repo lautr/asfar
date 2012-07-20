@@ -1,3 +1,6 @@
+/**
+ * v1 
+ */
 (function ($) {
 	"use strict";
 	
@@ -76,7 +79,6 @@
 					if (typeof callback == 'function') {
 						callback(urlFragment);
 					}
-					//$('#loadAnimationWrapper').hide();
 				}
 			});
 			
