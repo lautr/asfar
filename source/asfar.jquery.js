@@ -68,11 +68,14 @@
 					}
 						
 					thisR.insert(urlFragment,target,data);
+					
+					if(0 !== $(target).find(selector).size()){
+						$(target).find(selector).click(function(){
+							event.preventDefault();
+							thisR.call($(this).attr('href'),target);
+						});
+					}
 				
-					$(target).find(selector).click(function(){
-						event.preventDefault();
-						this.call($(this).attr('href'),target);
-					});
 					
 					thisR.success(urlFragment,target);
 					
@@ -142,7 +145,7 @@
 	
 	
 		
-		$(selector).live('click',function (event) {
+		$(selector).click(function (event) {
 			event.preventDefault();
 			html5AjaxHistoryO.call($(this).attr('href'),target);
 		});
