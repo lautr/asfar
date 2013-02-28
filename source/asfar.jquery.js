@@ -1,5 +1,5 @@
 /**
- * v1 
+ * v1.1
  */
 (function ($) {
 	"use strict";
