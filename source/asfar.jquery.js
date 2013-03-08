@@ -1,5 +1,13 @@
 /**
- * v1.2
+ * asfar
+ * ajax substitute for all requests
+ *
+ * a drop in tool to transform any regular GET Request int ao an ajax request and place the response in to the page,
+ * allowing the use of callback functions to define any kind of effect while keeping the history legit
+ *
+ * @version 1.2
+ * @author  johannes lauter ( hannes@lautr.com )
+ * @see     https://github.com/lautr/asfar
  */
 ;(function($, doc, win) {
     "use strict";
@@ -10,8 +18,6 @@
         this.$el  = $(el);
         this.pagecount = 0;
         this.currentHash = null;
-        this.historyBackward = new Array();
-
 
         this.default = {
             'selector':        'a[href*="' + document.location.host + '"], a[href^="/"], a:not([href^="http://"])',
@@ -45,7 +51,7 @@
 
     Asfar.prototype.pushState = function (urlFragment, first) {
         if (this.opts.html5Support) {
-            history.pushState({type: 'ajax', stamp: 'x' + (Math.floor((Math.random()*9999)+1))}, "title " + this.pagecount,urlFragment);
+            history.pushState({type: 'ajax'}, "title " + this.pagecount,urlFragment);
             this.pagecount++;
         }else{
             location.hash = '#!' + urlFragment;
@@ -124,41 +130,9 @@
             }, self.opts.sheBangInterval);
         } else {
             window.onpopstate = function (event) {
-
-
-
                 if (event.state !== null) {
                     if ("ajax" === event.state.type) {
-                        console.log(event.state);
-
-                        var i, direction = 'next', stamp;
-
-                        stamp = event.state.stamp;
-
-                        console.log(self.historyBackward.length);
-
-
-                        if (0 < self.historyBackward.length) {
-                            self.historyBackward.foreach( function( k, v ) {
-                                console.log(k);
-                                if (k === stamp) {
-                                    self.historyBackward.splice(i, 9999999);
-                                    direction = 'prev';
-                                }
-                                i++;
-                            });
-                        }
-
-                        console.log(direction);
-
-                        if ('next' === direction) {
-                            self.historyBackward[stamp] = 'x';
-                            console.log(self.historyBackward, self.historyBackward.length);
-                        }
-
-
-                        self.call(document.location.pathname, self.opts.target, true);
-
+                         self.call(document.location.pathname, self.opts.target, true);
                     }
                 }
             };
