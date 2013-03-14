@@ -77,7 +77,7 @@
                 if (0 !== $(responseHtml).find(target).parent().size()) {
                     data = $(responseHtml).find(target).html();
                 }
-
+				data = '<!-- asfar -->' + data + '<!-- end of asfar -->';
                 self.opts.insert(urlFragment, target, data);
 
                 if (true !== isHistory) {
@@ -143,12 +143,18 @@
 			location.href = location.hash.substring(2);
 		}
 
+		$(self.opts.target).on('click.' + name, this.$selector, function(e) {
+			e.preventDefault();
+
+            self.call($(e.target).attr('href'), self.opts.target, false);
+		});
+/*		
         this.$selector.on('click.' + name, function(e) {
             e.preventDefault();
 
             self.call($(this).attr('href'), self.opts.target, false);
         });
-
+*/
         if (this.opts.html5Support) {
             self.pushState(document.location.pathname);
         }
@@ -168,6 +174,7 @@
         if (1 === $(this).size()) {
             return new Asfar(this, opts, target);
         }
+        
     };
 
 })(jQuery, document, window);
