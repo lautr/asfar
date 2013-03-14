@@ -142,19 +142,12 @@
         if (!this.opts.html5Support && '#!' === location.hash.substring(0,2)) {
 			location.href = location.hash.substring(2);
 		}
-
-		$(self.opts.target).on('click.' + name, this.$selector, function(e) {
+		$(self.opts.target).on('click.' + name, this.opts.selector, function(e) {
 			e.preventDefault();
 
             self.call($(e.target).attr('href'), self.opts.target, false);
 		});
-/*		
-        this.$selector.on('click.' + name, function(e) {
-            e.preventDefault();
 
-            self.call($(this).attr('href'), self.opts.target, false);
-        });
-*/
         if (this.opts.html5Support) {
             self.pushState(document.location.pathname);
         }
