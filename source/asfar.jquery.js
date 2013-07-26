@@ -30,13 +30,7 @@
             'after':            function (urlFragment, target) {},
             'error':            function (jqXHR, textStatus, errorThrown, urlFragment, target) {},
             'insert':           function (urlFragment, target, data) {
-			    $(target).html(data);
-		    },
-            'historyNext':      function(urlFragment, target, data) {
-                this.opts.insert(urlFragment, target, data);
-            },
-            'historyPrev':      function(urlFragment, target, data) {
-                this.opts.insert(urlFragment, target, data);
+                $(target).html(data);
             }
         };
 
@@ -77,7 +71,8 @@
                 if (0 !== $(responseHtml).find(target).parent().size()) {
                     data = $(responseHtml).find(target).html();
                 }
-				data = '<!-- asfar -->' + data + '<!-- end of asfar -->';
+
+                data = '<!-- asfar -->' + data + '<!-- end of asfar -->';
                 self.opts.insert(urlFragment, target, data);
 
                 if (true !== isHistory) {
@@ -132,7 +127,7 @@
             window.onpopstate = function (event) {
                 if (event.state !== null) {
                     if ("ajax" === event.state.type) {
-                         self.call(document.location.pathname, self.opts.target, true);
+                        self.call(document.location.pathname, self.opts.target, true);
                     }
                 }
             };
@@ -140,13 +135,26 @@
 
         // this can be copied in to the header of the html document to increase speed
         if (!this.opts.html5Support && '#!' === location.hash.substring(0,2)) {
-			location.href = location.hash.substring(2);
-		}
-		$(self.opts.target).on('click.' + name, this.opts.selector, function(e) {
-			e.preventDefault();
+            location.href = location.hash.substring(2);
+        }
+
+        $(this.opts.selector).on('click.' + name + '-page-wide', function(e) {
+            e.preventDefault();
 
             self.call($(e.target).attr('href'), self.opts.target, false);
-		});
+        });
+
+        // not really happy with this, but only way so far to add a listene rto all links in the body but only apply
+        // delegation in the target area
+        $(self.opts.target).find(this.opts.selector).each(function(){
+            $(this).unbind('click.' + name + '-page-wide');
+        });
+
+        $(self.opts.target).on('click.' + name, this.opts.selector, function(e) {
+            e.preventDefault();
+
+            self.call($(e.target).attr('href'), self.opts.target, false);
+        });
 
         if (this.opts.html5Support) {
             self.pushState(document.location.pathname);
@@ -167,7 +175,7 @@
         if (1 === $(this).size()) {
             return new Asfar(this, opts, target);
         }
-        
+
     };
 
 })(jQuery, document, window);
