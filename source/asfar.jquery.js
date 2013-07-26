@@ -5,7 +5,7 @@
  * a drop in tool to transform any regular GET Request int ao an ajax request and place the response in to the page,
  * allowing the use of callback functions to define any kind of effect while keeping the history legit
  *
- * @version 1.2
+ * @version 1.2.1
  * @author  johannes lauter ( hannes@lautr.com )
  * @see     https://github.com/lautr/asfar
  */
@@ -55,6 +55,9 @@
 
     Asfar.prototype.call = function(urlFragment, target, isHistory) {
         var self = this;
+
+        // remove origin from url fragment to make sure its always just path, not the full url
+        urlFragment = urlFragment.replace(location.origin, '');
 
         self.opts.before(urlFragment, target);
 
