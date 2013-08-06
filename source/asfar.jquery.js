@@ -130,7 +130,7 @@
             window.onpopstate = function (event) {
                 if (event.state !== null) {
                     if ("ajax" === event.state.type) {
-                        self.call(document.location.pathname, self.opts.target, true);
+                        self.call(document.location.href, self.opts.target, true);
                     }
                 }
             };
