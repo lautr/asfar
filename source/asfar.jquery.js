@@ -25,6 +25,9 @@
             'sheBangFallback': true,
             'sheBangInterval': 150,
             'html5Support':     true,
+            'filterResponse':  function (reponse) {
+                return reponse;
+            },
             'before':           function (urlFragment, target) {},
             'success':          function (urlFragment, target) {},
             'after':            function (urlFragment, target) {},
@@ -70,6 +73,8 @@
             success: function(data) {
                 // we need to wrap it, otherwise we can't select it if body is the parent
                 var responseHtml = '<section id="asfar-fake">' + data + '</section>';
+
+                responseHtml = self.opts.filterResponse(responseHtml);
 
                 if (0 !== $(responseHtml).find(target).parent().size()) {
                     data = $(responseHtml).find(target).html();
