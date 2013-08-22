@@ -5,7 +5,7 @@
  * a drop in tool to transform any regular GET Request int ao an ajax request and place the response in to the page,
  * allowing the use of callback functions to define any kind of effect while keeping the history legit
  *
- * @version 1.2.1
+ * @version 1.2.2
  * @author  johannes lauter ( hannes@lautr.com )
  * @see     https://github.com/lautr/asfar
  */
@@ -47,6 +47,7 @@
     }
 
     Asfar.prototype.pushState = function (urlFragment, first) {
+
         if (this.opts.html5Support) {
             history.pushState({type: 'ajax'}, "title " + this.pagecount,urlFragment);
             this.pagecount++;
@@ -65,7 +66,7 @@
         self.opts.before(urlFragment, target);
 
         $.ajax({
-            cache: false,
+            cache: true,
             async: true,
             type: 'GET',
             dataType: "html",
@@ -165,7 +166,7 @@
         });
 
         if (this.opts.html5Support) {
-            self.pushState(document.location.pathname);
+            self.pushState(document.location.href);
         }
     };
 
