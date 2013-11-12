@@ -1,0 +1,7 @@
+{
+    "name":  "Lautr Asfar",
+    "version": "1.0.1",
+    "dependencies": {
+        "jquery": "latest"
+    }
+}
