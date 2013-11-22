@@ -20,5 +20,6 @@
         "shebang",
         "request",
         "ajax"
-    ]
+    ],
+    "description" : "a simple and unified approch to implement the new HTML5 History Interface & loading content via ajax, an ajax substitute for (all) requests"
 }
