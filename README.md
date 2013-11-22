@@ -61,46 +61,7 @@ Complete page as ajax response - no server partial response: [http://www.lautr.c
 
 ### Server Side
 
-You can optimize your application to only return the part of the page that you actually want to load, you can do that by recognizing an "ajax" call and delivering different/partial content depending on that. Here are some examples how to do that in some PHP Enviroments:
-
-#### Zend Framework Example
-<pre>
-	class IndexController extends Zend_Controller_Action
-	{
-		public function init()
-		{
-			// Disable render helper and zend Layout
-			if($this->_request->isXmlHttpRequest()){
-				$this->_helper->layout()->disableLayout();
-			}
-		}
-	}
-</pre>
-#### Symfony 2 Example
-<pre>
-	/**
-	 * checks if the request is done by an ajax like query
-	 * @return boolean 
-	 */
-	public function isXmlHttpRequest() {
-		return $this->get('request')->isXmlHttpRequest() || $this->get('request')->get('_xml_http_request');
-	}
-</pre>
-#### native PHP Example
-<pre>
-	/**
-	 * checks if the current Request is ajax or not
-	 * @return bool
-	 */
-	function isAjaxRequest()
-	{
-		if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-			return true;
-		}else{
-			return false;
-		}
-	}
-</pre>
+You can optimize your application to only return the part of the page that you actually want to load, you can do that by recognizing an "ajax" call and delivering different/partial content depending on that.
 
 ### Client Side
 
