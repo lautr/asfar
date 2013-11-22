@@ -8,5 +8,17 @@
     ],
     "dependencies": {
         "jquery": ">= 1.8.0"
-    }
+    },
+    "keywords": [
+        "jquery",
+        "javascript",
+        "ajax",
+        "html5",
+        "history",
+        "interface",
+        "asfar",
+        "shebang",
+        "request",
+        "ajax"
+    ]
 }
