@@ -12,6 +12,8 @@ If your Browser does not support the HMLT5 History Interface (yes IE Users, I'm 
 
 ##demos
 
+DEMOS ARE CURRENTLY UNAVAIBLE – SORRY
+
 Plain: [http://www.lautr.com/asfar/example-plain/index.php](http://www.lautr.com/asfar/example-plain/index.php)
 
 Effetcs using Callbacks: [http://www.lautr.com/asfar/example-fancy/index.php](http://www.lautr.com/asfar/example-fancy/index.php)
