@@ -12,11 +12,7 @@ If your Browser does not support the HMLT5 History Interface (yes IE Users, I'm 
 
 ##demos
 
-Plain: [http://lautr.com/sandbox/asfar/example-plain/start.html](http://lautr.com/sandbox/asfar/example-plain/start.html
-)
-
-Effetcs using Callbacks: [http://lautr.com/sandbox/asfar/example-fancy/start.html](http://lautr.com/sandbox/asfar/example-fancy/start.html
-)
+----
 
 ##implementation & Examples
 ###basic
