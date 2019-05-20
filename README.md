@@ -1,33 +1,35 @@
-#[asfar](http://www.lautr.com/asfar) - ajax substitute for (all) requests
+# [asfar](http://www.lautr.com/asfar) - ajax substitute for (all) requests
+
+> This Project is no longer maintained as it is no longer solving any relevant problem
 
 asfar is a "simple" approch to implement the new HTML5 History Interface or shebangs (depending on Browser Capability) to load content via AJAX to a specific DOM Target and keep track of that in the History & Adress Bar of the Browser.
 
 In its current Form asfar is an jQuery Plugin and need the Library to function, depending on the feedback this might change in the future.
 
-##about
+## about
 
 The main goal of asfar is to provide an easy way (just look at the basic implementation) to Access and Reffer Information/States of Content that is provided via AJAX and work with them, most likely show them in some way on the page, whyle keeping track of thoose changes in the History & Adress Bar of the Browser.
 
 If your Browser does not support the HMLT5 History Interface (yes IE Users, I'm looking at you), the functionality is the same only that shebangs are used (like Facebbok does in general for Example).
 
-##demos
+## demos
 
 ----
 
-##implementation & Examples
-###basic
+## implementation & Examples
+### basic
 <pre>
 	$('#content').asfar();
 </pre>
 
-###selector
+### selector
 <pre>
 	$('#content').asfar({
 		 selector : 'a:not(.extern)'
 	});
 </pre>
 
-###callbacks
+### callbacks
 <pre>
 	$('#content').asfar({
         selector : 'a:not(.extern)',
@@ -53,7 +55,7 @@ If your Browser does not support the HMLT5 History Interface (yes IE Users, I'm 
 	});
 </pre>
 
-##optimization
+## optimization
 
 ### Server Side
 
